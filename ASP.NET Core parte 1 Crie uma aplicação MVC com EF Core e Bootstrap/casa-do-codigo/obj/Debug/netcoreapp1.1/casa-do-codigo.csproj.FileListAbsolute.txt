@@ -1,0 +1,9 @@
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\bin\Debug\netcoreapp1.1\casa-do-codigo.deps.json
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\bin\Debug\netcoreapp1.1\casa-do-codigo.runtimeconfig.json
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\bin\Debug\netcoreapp1.1\casa-do-codigo.runtimeconfig.dev.json
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\bin\Debug\netcoreapp1.1\casa-do-codigo.dll
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\bin\Debug\netcoreapp1.1\casa-do-codigo.pdb
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\obj\Debug\netcoreapp1.1\casa-do-codigo.csproj.CoreCompileInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\obj\Debug\netcoreapp1.1\casa-do-codigo.AssemblyInfo.cs
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\obj\Debug\netcoreapp1.1\casa-do-codigo.dll
+C:\Users\vntleju\Documents\Cursos\alura\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\casa-do-codigo\obj\Debug\netcoreapp1.1\casa-do-codigo.pdb
