@@ -38,6 +38,8 @@ textarea {
 
 .left.carousel-control , .right.carousel-control{
     background-image: none;
+    width: 100px;
+    height: 100px;
 }
 
 .navbar-brand{
@@ -50,5 +52,10 @@ textarea {
     background-color: #f8965d;
     border-color:  white;
 } 
+
+.row-center{
+    display: flex;
+    align-items: center;
+}
 
 

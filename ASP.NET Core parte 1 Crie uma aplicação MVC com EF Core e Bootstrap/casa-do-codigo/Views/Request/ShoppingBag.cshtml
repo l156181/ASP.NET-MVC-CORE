@@ -1,8 +1,8 @@
+@model casa_do_codigo.Models.ViewModels.ShoppingCartViewModel
+
 @{
     ViewData["Title"] = "ShoppingBag";
 }
-
-<h3>My Shopping Bag</h3>
 
 <div class="panel panel-default"> 
     <div class="panel-heading">
@@ -10,10 +10,10 @@
             <div class="col-md-6">
                 <span>Item</span>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 text-center">
                 <span>Unit Price</span>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 text-center">
                 <span>Quantity</span>
             </div>
             <div class="col-md-2">
@@ -22,33 +22,44 @@
         </div>    
     </div>
     <div class="panel-body">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="~/images/products/small_4.jpg"/>                    
+        @foreach(var item in @Model.Itens){
+            <div class="row row-center">
+                <div class="col-md-3">
+                    <img src="~/images/products/small_@(item.Id).jpg"/>                    
+                </div>
+                <div class="col-md-3 text-center">
+                    <span>@(item.Product.Name)</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span>@(item.UnitPrice)</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span>@(item.Quantity)</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span class="pull-right">R$ @(item.SubTotal)</span>
+                </div>
             </div>
-            <div class="col-md-3">
-                <span>REST</span>
-            </div>
-            <div class="col-md-2">
-                <span>R$ 70,00</span>
-            </div>
-            <div class="col-md-2">
-                <span>3</span>
-            </div>
-            <div class="col-md-2">
-                <span class="pull-right">R$ 210,00</span>
-            </div>
-        </div>
+        } 
     </div>
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-10">
-                <span>Total: 1 item</span>
+                <span> Total: @Model.Itens.Count()  @(Model.Itens.Count() == 1? "item" : "itens") </span>
             </div>
             <div class="col-md-2">
-                <span class="pull-right">R$ 210,00</span>
+                <span class="pull-right"> Total: R$ @Model.Total</span>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!--<a href="/request/summary" class="btn btn-success pull-right">Finish Order</a-->
+        <!-- null = valor da rota ou parametros a serem passados quando a requisição para este link for feita-->
+        <!--@Html.ActionLink("Finish Order","summary","request",null, new { @class = "btn btn-success pull-right"})-->
+        <a asp-action="summary" class="btn btn-success pull-right">Finish Order</a>
     </div>
 </div>
 

@@ -1,6 +1,9 @@
+@model casa_do_codigo.Models.ViewModels.ShoppingCartViewModel
+
 @{
     ViewData["Title"] = "Summary";
 }
+
 
 <h3>Order Summary</h3>
 
@@ -29,15 +32,25 @@
             
         </div>
         <hr>
+
         <div class="row">
-            <div class="col-md-10">
-                <h3>Item</h3>
-                <div>REST</div> 
+                <div class="col-md-10">
+                    <h3>Item</h3>
+                </div>
+                <div class="col-md-2">
+                    <h3>Quantity</h3>
+                </div>
             </div>
-            <div class="col-md-2">
-                <h3>Quantity</h3>
-                <div class="pull-right">1</div> 
+
+        @foreach(var Item in @Model.Itens){
+            <div class="row">
+                <div class="col-md-10">
+                    <div>@(Item.Product.Name)</div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="pull-right">@(Item.Quantity)</div> 
+                </div>
             </div>
-        </div>
+        }
     </div>
 </div>

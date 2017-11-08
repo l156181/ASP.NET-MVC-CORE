@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using casa_do_codigo.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace casa_do_codigo
 {
@@ -29,10 +31,13 @@ namespace casa_do_codigo
         {
             // Add framework services.
             services.AddMvc();
+            //string  connectionString = @"Data Source=VNTWKSW7575\SQLEXPRESS;" + "Initial Catalog=CasaDoCodigo;" + "User id=VENTURUS\vntleju;" + "Password=;" + "Integrated Security=true";
+            string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
+            services.AddDbContext<Context>(options => options.UseSqlServer(connectionString));
+            services.AddTransient<IDataService, DataService>();
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IServiceProvider serviceProvider)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -52,8 +57,11 @@ namespace casa_do_codigo
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Request}/{action=Carousel}/{id?}");
             });
+
+            IDataService dataService = serviceProvider.GetService<IDataService>();
+            dataService.InitDB();
         }
     }
 }
