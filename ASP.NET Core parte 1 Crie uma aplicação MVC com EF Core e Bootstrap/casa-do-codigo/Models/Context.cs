@@ -7,8 +7,12 @@ using System.Linq;
 namespace casa_do_codigo.Models{
     public class Context : DbContext
     {
-        public DbSet<Product> Products { get; private set; }
-        public DbSet<Order> Orders {get; set; }
+        public DbSet<Product> Products { get;  set; }
+        public DbSet<Order> Orders {
+            get;
+            
+            set;
+        }
         
 
         public Context(DbContextOptions<Context> options) : base(options)

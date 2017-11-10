@@ -13,6 +13,8 @@ namespace casa_do_codigo.Models
         public int Id { get; private set; }
         public string Name { get; private set; }
         public decimal  Price { get; private set; }
+
+        public List<Order> Orders {get; set;} = new List<Order>();
         
         public Product(){}
 

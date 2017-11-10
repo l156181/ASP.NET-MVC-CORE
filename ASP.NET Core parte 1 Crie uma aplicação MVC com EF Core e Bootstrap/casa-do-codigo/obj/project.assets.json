@@ -10726,11 +10726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\vntleju\\Documents\\Cursos\\alura\\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\\casa-do-codigo\\casa-do-codigo.csproj",
+      "projectUniqueName": "C:\\Users\\vntleju\\Documents\\Cursos\\alura\\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\\casa-do-codigo\\casa-do-codigo.csproj",
       "projectName": "casa-do-codigo",
-      "projectPath": "c:\\Users\\vntleju\\Documents\\Cursos\\alura\\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\\casa-do-codigo\\casa-do-codigo.csproj",
+      "projectPath": "C:\\Users\\vntleju\\Documents\\Cursos\\alura\\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\\casa-do-codigo\\casa-do-codigo.csproj",
       "packagesPath": "C:\\Users\\vntleju\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\vntleju\\Documents\\Cursos\\alura\\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\\casa-do-codigo\\obj\\",
+      "outputPath": "C:\\Users\\vntleju\\Documents\\Cursos\\alura\\ASP.NET Core parte 1 Crie uma aplicação MVC com EF Core e Bootstrap\\casa-do-codigo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vntleju\\AppData\\Roaming\\NuGet\\NuGet.Config"

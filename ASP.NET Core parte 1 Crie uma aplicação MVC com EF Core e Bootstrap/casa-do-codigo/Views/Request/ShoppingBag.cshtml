@@ -23,7 +23,7 @@
     </div>
     <div class="panel-body">
         @foreach(var item in Model.Itens){
-            <div class="row row-center">
+            <div class="row row-center" item-id="@(item.Id)">
                 <div class="col-md-3">
                     <img src="~/images/products/small_@(item.Id).jpg"/>                    
                 </div>
@@ -34,7 +34,11 @@
                     <span>@(item.UnitPrice)</span>
                 </div>
                 <div class="col-md-2 text-center">
-                    <span>@(item.Quantity)</span>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <input class="input-quantity text-center form-control" type="number" value="@(item.Quantity)">
+                    </div>    
+                    <div class="col-md-2"></div>
                 </div>
                 <div class="col-md-2 text-center">
                     <span class="pull-right">R$ @(item.SubTotal)</span>
@@ -62,4 +66,12 @@
         <a asp-action="summary" class="btn btn-success pull-right">Finish Order</a>
     </div>
 </div>
+
+
+
+@section Scripts
+{
+    <script src="~/js/input.js" type="text/javascript"></script>
+
+}
 

@@ -32,6 +32,12 @@ namespace casa_do_codigo.Controllers
             return View(GetShoppingCart());
         } 
 
+    
+        [HttpPost]
+        public void PostQuantity(){
+
+        }
+
         private ShoppingCartViewModel GetShoppingCart()
         {    
             List<Order> orders = this._dataService.GetOrders();

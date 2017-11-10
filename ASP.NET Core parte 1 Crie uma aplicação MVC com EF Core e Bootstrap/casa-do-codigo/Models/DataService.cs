@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace casa_do_codigo.Models
@@ -14,7 +15,8 @@ namespace casa_do_codigo.Models
         {
             this._context = Context;
         }
-        public void InitDB(){           
+        public void InitDB()
+        {           
             this._context.Database.EnsureCreated();
         
             if(this._context.Products.Count() == 0) {
@@ -31,7 +33,9 @@ namespace casa_do_codigo.Models
             return this._context.Products.ToList();
         }
 
-        public List<Order> GetOrders(){
+        public List<Order> GetOrders()
+        {
+           GetProducts(); 
            return this._context.Orders.ToList();  
         }
 
@@ -39,7 +43,8 @@ namespace casa_do_codigo.Models
         {
             List<Product> products = new List<Product>();
 
-            for(int i = 1; i <  productsNumber; i++){
+            for(int i = 1; i <  productsNumber; i++)
+            {
                 Product p = new Product ("Product " + i, 10.90m * i);
                 products.Add(p);    
             } 
