@@ -1,5 +1,9 @@
+@model List<Product>
+
 @{
     ViewData["Title"] = "Carousel";
+    const int TAM_PAGE = 4;
+    int numPages = (int) Math.Ceiling((double)Model.Count()/ TAM_PAGE);
 }
 
 <h3>Catálogo</h3>
@@ -11,142 +15,40 @@
         <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>-->
 
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div class="row">
-
-                @for(int i = 0; i < 4 ;i++){
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <img src="~/images/products/large_@(Model[i].Id).jpg"/>
-                            </div> 
-                            <div class="panel-footer">
-                                <div>@(Model[i].Name)</div>
-                                <div>R$ @(Model[i].Price)</div>
-                                
-                                <div class="text-center">
-                                    <!--@Html.ActionLink("Add","shoppingbag","request")-->
-                                    <!--<a asp-controller="request" asp-action="shoppingbag">Add</a>-->
-                                    <a asp-action="shoppingbag">Add</a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
+    <div class="carousel-inner" role="listbox">        
+         @for(int page = 0; page < numPages; page++) 
+         {
+            <div class="item @(page == 0 ? "active" : "")">  
+              <div class="row">
+                @{
+                    var productsPage = 
+                        Model
+                        .Skip(TAM_PAGE * page)
+                        .Take(TAM_PAGE);
                 }
-<!--
-                <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/products/large_1.jpg"/>
+                @foreach(var product in productsPage ){        
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <img src="~/images/products/large_@(product.Id).jpg"/>
+                                </div> 
+                                <div class="panel-footer">
+                                    <div>@(product.Name)</div>
+                                    <div>R$ @(product.Price)</div>
+                                    
+                                    <div class="text-center">
+                                        <!--@Html.ActionLink("Add","shoppingbag","request")-->
+                                        <!--<a asp-controller="request" asp-action="shoppingbag">Add</a>-->
+                                        <a asp-action="shoppingbag">Add</a>
+                                    </div>    
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel-footer">
-                            <div>Camiseta Error 404</div>
-                            <div>R$ 59,90</div>
-                            
-                            <div class="text-center">
-                                @Html.ActionLink("Add","shoppingbag","request")
-                                <a asp-controller="request" asp-action="shoppingbag">Add</a>
-                                <a asp-action="shoppingbag">Add</a>
-                            </div>    
-                        </div>
-                    </div>
+                    }
                 </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/products/large_2.jpg"/>
-                        </div>
-                        <div class="panel-footer">
-                            <div>May the Code Be With You</div>
-                            <div>R$ 59,90</div>
-                            <div class="text-center">
-                                @Html.ActionLink("Add","shoppingbag","request")
-                                <a asp-controller="request" asp-action="shoppingbag">Add</a>
-                                <a asp-action="shoppingbag">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/products/large_3.jpg"/>
-                        </div>
-                        <div class="panel-footer">
-                            <div>Camiseta CSB</div>
-                            <div>R$ 59,90</div>
-                            <div class="text-center">
-                                @Html.ActionLink("Add","shoppingbag","request")
-                                <a asp-controller="request" asp-action="shoppingbag">Add</a>
-                                <a asp-action="shoppingbag">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                        <div class="panel-footer">
-                            <img src="~/images/products/large_4.jpg"/>
-                        </div>
-                            <div>Camiseta Error 404</div>
-                            <div>R$ 59,90</div>
-                            <div class="text-center">
-                                @Html.ActionLink("Add","shoppingbag","request")
-                                <a asp-controller="request" asp-action="shoppingbag">Add</a>
-                                <a asp-action="shoppingbag">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
--->                
-            </div>
-        </div>
-        <div class="item">    
-               @for(int i = 4; i < 8 ;i++){
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <img src="~/images/products/large_@(Model[i].Id).jpg"/>
-                            </div> 
-                            <div class="panel-footer">
-                                <div>@(Model[i].Name)</div>
-                                <div>R$ @(Model[i].Price)</div>
-                                
-                                <div class="text-center">
-                                    <!--@Html.ActionLink("Add","shoppingbag","request")-->
-                                    <!--<a asp-controller="request" asp-action="shoppingbag">Add</a>-->
-                                    <a asp-action="shoppingbag">Add</a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                }
-        </div>
-        <div class="item">
-            @for(int i = 8; i < 9 ;i++){
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <img src="~/images/products/large_@(Model[i].Id).jpg"/>
-                            </div> 
-                            <div class="panel-footer">
-                                <div>@(Model[i].Name)</div>
-                                <div>R$ @(Model[i].Price)</div>
-                                
-                                <div class="text-center">
-                                    <!--@Html.ActionLink("Add","shoppingbag","request")-->
-                                    <!--<a asp-controller="request" asp-action="shoppingbag">Add</a>-->
-                                    <a asp-action="shoppingbag">Add</a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                }
-        </div>
-        <div class="item">
-        </div>        
+            </div>          
+        }
+       
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

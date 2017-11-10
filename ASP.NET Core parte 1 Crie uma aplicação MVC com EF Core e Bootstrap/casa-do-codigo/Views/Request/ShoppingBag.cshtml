@@ -22,7 +22,7 @@
         </div>    
     </div>
     <div class="panel-body">
-        @foreach(var item in @Model.Itens){
+        @foreach(var item in Model.Itens){
             <div class="row row-center">
                 <div class="col-md-3">
                     <img src="~/images/products/small_@(item.Id).jpg"/>                    
@@ -45,10 +45,10 @@
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-10">
-                <span> Total: @Model.Itens.Count()  @(Model.Itens.Count() == 1? "item" : "itens") </span>
+                <span> Total: @(Model.Itens.Count())  @(Model.Itens.Count() == 1? "item" : "itens") </span>
             </div>
             <div class="col-md-2">
-                <span class="pull-right"> Total: R$ @Model.Total</span>
+                <span class="pull-right"> Total: R$ @(Model.Total)</span>
             </div>
         </div>
     </div>

@@ -16,11 +16,13 @@ namespace casa_do_codigo.Models
         
         public Product(){}
 
-        public Product(int Id, string name, decimal price) : this(name,price){
+        public Product(int Id, string name, decimal price) : this(name,price)
+        {
             this.Id = Id;
         }
 
-        public Product(string name, decimal price){
+        public Product(string name, decimal price)
+        {
             this.Name = name;
             this.Price = price;
         }

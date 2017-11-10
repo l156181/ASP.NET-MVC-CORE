@@ -9,6 +9,7 @@ namespace casa_do_codigo.Models.ViewModels
 {
     public class ShoppingCartViewModel {
         public List<Order> Itens { get; private set;}
+        
         public decimal Total { 
             get{
                 return Itens.Sum(i => i.SubTotal);
