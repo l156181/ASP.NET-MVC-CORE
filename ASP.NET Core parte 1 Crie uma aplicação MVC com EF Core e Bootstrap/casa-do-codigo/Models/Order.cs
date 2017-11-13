@@ -1,25 +1,27 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using System.Runtime.Serialization;
 
 namespace casa_do_codigo.Models
 {
-    public class Order
-    {
-        public int Id { get;  set; }
-
+    public class Order : BaseModel
+    { 
+        [DataMember]
         public Product Product { get; set; }
 
-        public int Quantity  { get;  set; }
+        [DataMember]
+        public int Quantity  { get;  set;}
 
+        [DataMember]
         public decimal UnitPrice { 
             get{
-                return Product.Price;
+                return (Product != null)? Product.Price : 0;
             } 
             private set{} 
         }
        
+       [DataMember]
        public decimal SubTotal { get{
            return Quantity * UnitPrice;
        } }

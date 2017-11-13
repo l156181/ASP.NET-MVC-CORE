@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using casa_do_codigo.Models.ViewModels;
 
 
 namespace casa_do_codigo.Models
@@ -50,6 +51,24 @@ namespace casa_do_codigo.Models
             } 
 
             return products; 
+        }
+
+        public UpdateOrderResponse updateOrder(Order order)
+        {
+            var orderDb = this._context.Orders.Where(i => i.Id == order.Id).SingleOrDefault();
+ 
+            if(orderDb != null){
+                  orderDb.Quantity = order.Quantity; 
+                  if(orderDb.Quantity ==0){
+                      this._context.Remove(orderDb);
+                  }
+                  this._context.SaveChanges();            
+            }
+
+            var orders = this._context.Orders.ToList();
+            var shoppingCartViewModel = new ShoppingCartViewModel(orders);
+
+            return new UpdateOrderResponse(shoppingCartViewModel,order);
         }
     }
 }

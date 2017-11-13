@@ -31,11 +31,10 @@ namespace casa_do_codigo.Controllers
         {
             return View(GetShoppingCart());
         } 
-
     
         [HttpPost]
-        public void PostQuantity(){
-
+        public UpdateOrderResponse PostQuantity([FromBody]Order order){
+            return this._dataService.updateOrder(order);
         }
 
         private ShoppingCartViewModel GetShoppingCart()
