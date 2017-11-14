@@ -90,8 +90,8 @@ class ShoppingCart{
         var texto = "Total: " 
                     + itensNumber
                     + " "   
-                    + (itensNumber < 2)? 'item' : 'itens';
-        $('number-itens').html(texto);
+                    + ((itensNumber < 2)? 'item' : 'itens');
+        $('[number-itens]').html(texto);
     }
 }
 

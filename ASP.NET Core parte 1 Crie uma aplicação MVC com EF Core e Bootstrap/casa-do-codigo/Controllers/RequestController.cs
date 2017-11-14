@@ -22,10 +22,19 @@ namespace casa_do_codigo.Controllers
             return View(Products);
         }
 
-        public IActionResult ShoppingBag()
-        {
+
+        public IActionResult ShoppingBag(int? productId){
+            try
+            {
+                this._dataService.AddOrder(productId.Value);
+            }catch(InvalidOperationException e)
+            {
+                Console.WriteLine("\nPARAMETRO DA REQUISIÇÃO PRODUTO ID ESTÁ COM VALOR NULL\n");
+            }
+            
             return View(GetShoppingCart());
         }
+
 
         public IActionResult Summary()
         {

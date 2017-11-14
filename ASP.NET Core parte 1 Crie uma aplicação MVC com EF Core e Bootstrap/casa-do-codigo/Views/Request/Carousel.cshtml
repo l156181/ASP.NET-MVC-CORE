@@ -39,7 +39,7 @@
                                     <div class="text-center">
                                         <!--@Html.ActionLink("Add","shoppingbag","request")-->
                                         <!--<a asp-controller="request" asp-action="shoppingbag">Add</a>-->
-                                        <a asp-action="shoppingbag">Add</a>
+                                        <a asp-action="shoppingbag" asp-route-productId="@(product.Id)">Add</a>
                                     </div>    
                                 </div>
                             </div>

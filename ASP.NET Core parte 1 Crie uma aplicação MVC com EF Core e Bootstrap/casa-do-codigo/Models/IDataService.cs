@@ -14,5 +14,7 @@ namespace casa_do_codigo.Models
          List<Order> GetOrders();
 
          UpdateOrderResponse updateOrder(Order order);
+
+         void AddOrder(int produtoId);
     }
 }

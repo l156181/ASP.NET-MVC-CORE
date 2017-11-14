@@ -25,7 +25,7 @@
         @foreach(var item in Model.Itens){
             <div class="row row-center" item-id="@(item.Id)">
                 <div class="col-md-3">
-                    <img src="~/images/products/small_@(item.Id).jpg"/>                    
+                    <img src="~/images/products/small_@(item.Product.Id).jpg"/>                    
                 </div>
                 <div class="col-md-3 text-center">
                     <span>@(item.Product.Name)</span>

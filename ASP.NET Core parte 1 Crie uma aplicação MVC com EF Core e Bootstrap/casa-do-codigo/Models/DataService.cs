@@ -70,5 +70,24 @@ namespace casa_do_codigo.Models
 
             return new UpdateOrderResponse(shoppingCartViewModel,order);
         }
+
+        void IDataService.AddOrder(int produtoId)
+        {
+            try
+            {
+                var product = this._context.Products.Where(p => p.Id == produtoId).SingleOrDefault();
+                if(!this._context.Orders.Where(i => i.Product.Id == product.Id).Any()){
+                    this._context.Orders.Add(new Order(product,1));
+                    this._context.SaveChanges();
+                }else{
+                    var order = this._context.Orders.Where(o => o.Product.Id == produtoId).SingleOrDefault();
+                    order.Quantity = order.Quantity + 1;
+                    this._context.SaveChanges();
+                }
+            }catch(NullReferenceException e)
+            {
+
+            }
+        }
     }
 }
