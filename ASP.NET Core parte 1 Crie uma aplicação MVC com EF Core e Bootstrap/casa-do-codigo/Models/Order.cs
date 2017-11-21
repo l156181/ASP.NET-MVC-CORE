@@ -2,11 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace casa_do_codigo.Models
 {
     public class Order : BaseModel
     { 
+
+        [DataMember]
+        [Required]
+        public OrderUser OrderUser { get; private set; }
+
+        [Required]
         [DataMember]
         public Product Product { get; set; }
 
@@ -27,11 +34,12 @@ namespace casa_do_codigo.Models
        } }
 
        public Order (){} 
-       public Order(int id,  Product product, int quantity) : this(product,quantity) {
+       public Order(int id,OrderUser orderUser,Product product, int quantity) : this(orderUser,product,quantity) {
             this.Id = id;
        }
 
-       public Order(Product Product, int Quantity) {
+       public Order(OrderUser orderUser,Product Product, int Quantity) {
+         this.OrderUser = orderUser;
          this.Product = Product;
          this.Quantity = Quantity; 
        }

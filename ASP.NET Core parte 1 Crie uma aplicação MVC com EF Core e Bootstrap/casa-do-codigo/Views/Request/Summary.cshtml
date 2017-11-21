@@ -1,4 +1,4 @@
-@model casa_do_codigo.Models.ViewModels.ShoppingCartViewModel
+@model OrderUser
 
 @{
     ViewData["Title"] = "Summary";
@@ -18,16 +18,16 @@
         <div class="row">
             <div class="col-md-3">
                 <h3>Your Data</h3>
-                <div>João da Silva</div>
-                <div>(11) 1234-5678</div>
+                <div>@(Model.Name)</div>
+                <div>@(Model.PhoneNumber)</div>
             </div>
             
             <div class="col-md-3">
-                <span>joao@gmail.com</span>
+                <span>@(Model.Email)/span>
             </div>
             <div class="col-md-6">
                 <h3>Delivery Address</h3>
-                <h3>Delivery Street</h3>
+                <h3>@(Model.Address) @(Model.Complement) - @(Model.Neighborhood) - @(Model.City) - @(Model.UF)</h3>
             </div>
             
         </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-        @foreach(var Item in Model.Itens){
+        @foreach(var Item in Model.Orders){
             <div class="row">
                 <div class="col-md-10">
                     <div>@(Item.Product.Name)</div> 

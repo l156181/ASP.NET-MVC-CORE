@@ -39,10 +39,14 @@ class ShoppingCart{
     }
     
     postQuantity(data){
+        var token = $('input[name=__RequestVerificationToken]').val();
+        var header = {};
+        header['RequestVerificationToken'] = token;
         $.ajax({
             url: '/request/postquantity',
             type: 'POST',
             contentType: 'application/json',
+            headers: header,
             data: JSON.stringify(data)
         }).done(function(response){
             console.log("Quantidade " + response.order.quantity)

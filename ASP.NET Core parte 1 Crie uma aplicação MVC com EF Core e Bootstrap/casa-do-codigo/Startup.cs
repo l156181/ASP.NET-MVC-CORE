@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using casa_do_codigo.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace casa_do_codigo
 {
@@ -31,9 +32,22 @@ namespace casa_do_codigo
         {
             // Add framework services.
             services.AddMvc();
+
+            // Auxiliar para manter as sessoses em cache
+            services.AddDistributedMemoryCache();
+
+            // Adiciona a Seção
+            //services.AddSession(options => {
+            //    options.CookieHttpOnly = true;
+            //});
+            services.AddSession();
+
             //string  connectionString = @"Data Source=VNTWKSW7575\SQLEXPRESS;" + "Initial Catalog=CasaDoCodigo;" + "User id=VENTURUS\vntleju;" + "Password=;" + "Integrated Security=true";
             string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
             services.AddDbContext<Context>(options => options.UseSqlServer(connectionString));
+            
+            // injeção de dependencias
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IDataService, DataService>();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +66,9 @@ namespace casa_do_codigo
             }
 
             app.UseStaticFiles();
+
+            // Indica que a aplicação vai usar uma seção
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

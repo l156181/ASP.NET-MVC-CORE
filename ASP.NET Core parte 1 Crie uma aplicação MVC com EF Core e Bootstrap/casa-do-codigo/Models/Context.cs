@@ -13,6 +13,8 @@ namespace casa_do_codigo.Models{
             
             set;
         }
+
+        public DbSet<OrderUser> OrdersUsers{get; set;}
         
 
         public Context(DbContextOptions<Context> options) : base(options)

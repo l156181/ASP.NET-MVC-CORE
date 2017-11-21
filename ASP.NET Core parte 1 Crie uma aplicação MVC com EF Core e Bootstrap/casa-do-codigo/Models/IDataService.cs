@@ -12,9 +12,13 @@ namespace casa_do_codigo.Models
          List<Product> GetProducts();
 
          List<Order> GetOrders();
+         
+         OrderUser GetOrderUser();
 
          UpdateOrderResponse updateOrder(Order order);
 
          void AddOrder(int produtoId);
+
+         OrderUser UpdateOrderUser(OrderUser orderUser);
     }
 }

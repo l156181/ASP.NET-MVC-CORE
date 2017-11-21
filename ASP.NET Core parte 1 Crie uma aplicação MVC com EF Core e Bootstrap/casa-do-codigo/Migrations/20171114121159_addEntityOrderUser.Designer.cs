@@ -8,9 +8,10 @@ using casa_do_codigo.Models;
 namespace casadocodigo.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20171114121159_addEntityOrderUser")]
+    partial class addEntityOrderUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -21,19 +22,19 @@ namespace casadocodigo.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("OrderUserId");
-
-                    b.Property<int>("ProductId");
+                    b.Property<int?>("ProductId");
 
                     b.Property<int>("Quantity");
 
                     b.Property<decimal>("UnitPrice");
 
+                    b.Property<int?>("orderUserId");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderUserId");
-
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("orderUserId");
 
                     b.ToTable("Orders");
                 });
@@ -42,24 +43,6 @@ namespace casadocodigo.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("City");
-
-                    b.Property<string>("Complement");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Neighborhood");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<string>("UF");
-
-                    b.Property<string>("ZipCode");
 
                     b.HasKey("Id");
 
@@ -82,15 +65,13 @@ namespace casadocodigo.Migrations
 
             modelBuilder.Entity("casa_do_codigo.Models.Order", b =>
                 {
-                    b.HasOne("casa_do_codigo.Models.OrderUser", "OrderUser")
-                        .WithMany("Orders")
-                        .HasForeignKey("OrderUserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("casa_do_codigo.Models.Product", "Product")
                         .WithMany("Orders")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("casa_do_codigo.Models.OrderUser", "orderUser")
+                        .WithMany("Orders")
+                        .HasForeignKey("orderUserId");
                 });
         }
     }

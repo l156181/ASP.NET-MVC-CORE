@@ -4,6 +4,10 @@
     ViewData["Title"] = "ShoppingBag";
 }
 
+<form method="post">
+    @(Html.AntiForgeryToken())
+</form>
+
 <div class="panel panel-default"> 
     <div class="panel-heading">
         <div class="row">            
@@ -63,7 +67,8 @@
         <!--<a href="/request/summary" class="btn btn-success pull-right">Finish Order</a-->
         <!-- null = valor da rota ou parametros a serem passados quando a requisição para este link for feita-->
         <!--@Html.ActionLink("Finish Order","summary","request",null, new { @class = "btn btn-success pull-right"})-->
-        <a asp-action="summary" class="btn btn-success pull-right">Finish Order</a>
+        <a asp-action="carousel" class="btn btn-success pull-right">Go back to carousel view</a>
+        <a asp-action="register" class="btn btn-success pull-right">Register</a>
     </div>
 </div>
 

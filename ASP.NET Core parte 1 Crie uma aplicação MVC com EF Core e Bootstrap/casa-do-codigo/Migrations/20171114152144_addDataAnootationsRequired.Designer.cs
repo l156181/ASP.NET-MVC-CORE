@@ -8,9 +8,10 @@ using casa_do_codigo.Models;
 namespace casadocodigo.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20171114152144_addDataAnootationsRequired")]
+    partial class addDataAnootationsRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -42,24 +43,6 @@ namespace casadocodigo.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("City");
-
-                    b.Property<string>("Complement");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Neighborhood");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<string>("UF");
-
-                    b.Property<string>("ZipCode");
 
                     b.HasKey("Id");
 
