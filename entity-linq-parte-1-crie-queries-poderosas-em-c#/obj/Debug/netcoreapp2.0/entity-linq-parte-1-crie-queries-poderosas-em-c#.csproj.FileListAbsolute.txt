@@ -1,0 +1,10 @@
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\bin\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.deps.json
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\bin\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.runtimeconfig.json
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\bin\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.runtimeconfig.dev.json
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\bin\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.dll
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\bin\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.pdb
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\obj\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.csproj.CoreCompileInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\obj\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.AssemblyInfoInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\obj\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.AssemblyInfo.cs
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\obj\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.dll
+C:\Users\vntleju\Documents\Cursos\alura\entity-linq-parte-1-crie-queries-poderosas-em-c#\obj\Debug\netcoreapp2.0\entity-linq-parte-1-crie-queries-poderosas-em-c#.pdb
