@@ -1,0 +1,10 @@
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\bin\Debug\netcoreapp2.0\entity-frawework-core-1.deps.json
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\bin\Debug\netcoreapp2.0\entity-frawework-core-1.runtimeconfig.json
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\bin\Debug\netcoreapp2.0\entity-frawework-core-1.runtimeconfig.dev.json
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\bin\Debug\netcoreapp2.0\entity-frawework-core-1.dll
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\bin\Debug\netcoreapp2.0\entity-frawework-core-1.pdb
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\obj\Debug\netcoreapp2.0\entity-frawework-core-1.csproj.CoreCompileInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\obj\Debug\netcoreapp2.0\entity-frawework-core-1.AssemblyInfoInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\obj\Debug\netcoreapp2.0\entity-frawework-core-1.AssemblyInfo.cs
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\obj\Debug\netcoreapp2.0\entity-frawework-core-1.dll
+C:\Users\vntleju\Documents\Cursos\alura\entity-frawework-core-1\obj\Debug\netcoreapp2.0\entity-frawework-core-1.pdb
