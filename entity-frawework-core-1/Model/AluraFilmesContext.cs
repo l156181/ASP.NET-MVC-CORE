@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using entity_frawework_core_1.Dados;
 
 namespace entity_frawework_core_1.Model
 {
@@ -26,32 +27,36 @@ namespace entity_frawework_core_1.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Actor>(entity =>
-            {
-                entity.ToTable("actor");
 
-                entity.HasIndex(e => e.LastName)
-                    .HasName("idx_actor_last_name");
+            modelBuilder.ApplyConfiguration(new ActorConfiguration());
+            // modelBuilder.Entity<Actor>(entity =>
+            // {
+                
 
-                entity.Property(e => e.ActorId).HasColumnName("actor_id");
+            //     entity.ToTable("actor");
 
-                entity.Property(e => e.FirstName)
-                    .IsRequired()
-                    .HasColumnName("first_name")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+            //     entity.HasIndex(e => e.LastName)
+            //         .HasName("idx_actor_last_name");
 
-                entity.Property(e => e.LastName)
-                    .IsRequired()
-                    .HasColumnName("last_name")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+            //     entity.Property(e => e.ActorId).HasColumnName("actor_id");
 
-                entity.Property(e => e.LastUpdate)
-                    .HasColumnName("last_update")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-            });
+            //     entity.Property(e => e.FirstName)
+            //         .IsRequired()
+            //         .HasColumnName("first_name")
+            //         .HasMaxLength(45)                    
+            //         .IsUnicode(false);
+
+            //     entity.Property(e => e.LastName)
+            //         .IsRequired()
+            //         .HasColumnName("last_name")
+            //         .HasMaxLength(45)
+            //         .IsUnicode(false);
+
+            //     entity.Property(e => e.LastUpdate)
+            //         .HasColumnName("last_update")
+            //         .HasColumnType("datetime")
+            //         .HasDefaultValueSql("(getdate())");
+            //       });
 
             modelBuilder.Entity<Category>(entity =>
             {
@@ -116,61 +121,61 @@ namespace entity_frawework_core_1.Model
                     .HasDefaultValueSql("(getdate())");
             });
 
-            modelBuilder.Entity<Film>(entity =>
-            {
-                entity.ToTable("film");
+            // modelBuilder.Entity<Film>(entity =>
+            // {
+            //     entity.ToTable("film");
 
-                entity.HasIndex(e => e.LanguageId)
-                    .HasName("idx_fk_language_id");
+            //     entity.HasIndex(e => e.LanguageId)
+            //         .HasName("idx_fk_language_id");
 
-                entity.HasIndex(e => e.OriginalLanguageId)
-                    .HasName("idx_fk_original_language_id");
+            //     entity.HasIndex(e => e.OriginalLanguageId)
+            //         .HasName("idx_fk_original_language_id");
 
-                entity.Property(e => e.FilmId).HasColumnName("film_id");
+            //     entity.Property(e => e.FilmId).HasColumnName("film_id");
 
-                entity.Property(e => e.Description)
-                    .HasColumnName("description")
-                    .HasColumnType("text");
+            //     entity.Property(e => e.Description)
+            //         .HasColumnName("description")
+            //         .HasColumnType("text");
 
-                entity.Property(e => e.LanguageId).HasColumnName("language_id");
+            //     entity.Property(e => e.LanguageId).HasColumnName("language_id");
 
-                entity.Property(e => e.LastUpdate)
-                    .HasColumnName("last_update")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
+            //     entity.Property(e => e.LastUpdate)
+            //         .HasColumnName("last_update")
+            //         .HasColumnType("datetime")
+            //         .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.Length).HasColumnName("length");
+            //     entity.Property(e => e.Length).HasColumnName("length");
 
-                entity.Property(e => e.OriginalLanguageId).HasColumnName("original_language_id");
+            //     entity.Property(e => e.OriginalLanguageId).HasColumnName("original_language_id");
 
-                entity.Property(e => e.Rating)
-                    .HasColumnName("rating")
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('G')");
+            //     entity.Property(e => e.Rating)
+            //         .HasColumnName("rating")
+            //         .HasMaxLength(10)
+            //         .IsUnicode(false)
+            //         .HasDefaultValueSql("('G')");
 
-                entity.Property(e => e.ReleaseYear)
-                    .HasColumnName("release_year")
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
+            //     entity.Property(e => e.ReleaseYear)
+            //         .HasColumnName("release_year")
+            //         .HasMaxLength(4)
+            //         .IsUnicode(false);
 
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasColumnName("title")
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
+            //     entity.Property(e => e.Title)
+            //         .IsRequired()
+            //         .HasColumnName("title")
+            //         .HasMaxLength(255)
+            //         .IsUnicode(false);
 
-                entity.HasOne(d => d.Language)
-                    .WithMany(p => p.FilmLanguage)
-                    .HasForeignKey(d => d.LanguageId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_film_language");
+            //     entity.HasOne(d => d.Language)
+            //         .WithMany(p => p.FilmLanguage)
+            //         .HasForeignKey(d => d.LanguageId)
+            //         .OnDelete(DeleteBehavior.ClientSetNull)
+            //         .HasConstraintName("fk_film_language");
 
-                entity.HasOne(d => d.OriginalLanguage)
-                    .WithMany(p => p.FilmOriginalLanguage)
-                    .HasForeignKey(d => d.OriginalLanguageId)
-                    .HasConstraintName("fk_film_language_original");
-            });
+            //     entity.HasOne(d => d.OriginalLanguage)
+            //         .WithMany(p => p.FilmOriginalLanguage)
+            //         .HasForeignKey(d => d.OriginalLanguageId)
+            //         .HasConstraintName("fk_film_language_original");
+            // });
 
             modelBuilder.Entity<FilmActor>(entity =>
             {

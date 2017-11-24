@@ -25,5 +25,9 @@ namespace entity_frawework_core_1.Model
         public Language OriginalLanguage { get; set; }
         public ICollection<FilmActor> FilmActor { get; set; }
         public ICollection<FilmCategory> FilmCategory { get; set; }
+
+        public override string ToString(){
+            return "FALTA IMPLEMEMTAR";
+        } 
     }
 }
