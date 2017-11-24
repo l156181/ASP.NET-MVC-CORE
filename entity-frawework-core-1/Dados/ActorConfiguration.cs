@@ -33,9 +33,7 @@ namespace entity_frawework_core_1.Dados
                  builder.Property(e => e.LastUpdate)
                     .HasColumnName("last_update")
                     .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-            }
-
+                    .HasDefaultValueSql("(getdate())");        
         }
     }
 }

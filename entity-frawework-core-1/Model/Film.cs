@@ -27,7 +27,7 @@ namespace entity_frawework_core_1.Model
         public ICollection<FilmCategory> FilmCategory { get; set; }
 
         public override string ToString(){
-            return "FALTA IMPLEMEMTAR";
+            return this.FilmId + "\t" + this.Description;
         } 
     }
 }

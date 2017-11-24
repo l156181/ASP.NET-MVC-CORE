@@ -29,6 +29,10 @@ namespace entity_frawework_core_1.Model
         {
 
             modelBuilder.ApplyConfiguration(new ActorConfiguration());
+            modelBuilder.ApplyConfiguration(new FilmConfiguration());
+            modelBuilder.ApplyConfiguration(new FilmActorConfiguration());
+            modelBuilder.ApplyConfiguration(new FilmCategoryConfiguration());
+
             // modelBuilder.Entity<Actor>(entity =>
             // {
                 
@@ -177,75 +181,75 @@ namespace entity_frawework_core_1.Model
             //         .HasConstraintName("fk_film_language_original");
             // });
 
-            modelBuilder.Entity<FilmActor>(entity =>
-            {
-                entity.HasKey(e => new { e.ActorId, e.FilmId })
-                    .ForSqlServerIsClustered(false);
+            // modelBuilder.Entity<FilmActor>(entity =>
+            // {
+            //     entity.HasKey(e => new { e.ActorId, e.FilmId })
+            //         .ForSqlServerIsClustered(false);
 
-                entity.ToTable("film_actor");
+            //     entity.ToTable("film_actor");
 
-                entity.HasIndex(e => e.ActorId)
-                    .HasName("idx_fk_film_actor_actor");
+            //     entity.HasIndex(e => e.ActorId)
+            //         .HasName("idx_fk_film_actor_actor");
 
-                entity.HasIndex(e => e.FilmId)
-                    .HasName("idx_fk_film_actor_film");
+            //     entity.HasIndex(e => e.FilmId)
+            //         .HasName("idx_fk_film_actor_film");
 
-                entity.Property(e => e.ActorId).HasColumnName("actor_id");
+            //     entity.Property(e => e.ActorId).HasColumnName("actor_id");
 
-                entity.Property(e => e.FilmId).HasColumnName("film_id");
+            //     entity.Property(e => e.FilmId).HasColumnName("film_id");
 
-                entity.Property(e => e.LastUpdate)
-                    .HasColumnName("last_update")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
+            //     entity.Property(e => e.LastUpdate)
+            //         .HasColumnName("last_update")
+            //         .HasColumnType("datetime")
+            //         .HasDefaultValueSql("(getdate())");
 
-                entity.HasOne(d => d.Actor)
-                    .WithMany(p => p.FilmActor)
-                    .HasForeignKey(d => d.ActorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_film_actor_actor");
+            //     entity.HasOne(d => d.Actor)
+            //         .WithMany(p => p.FilmActor)
+            //         .HasForeignKey(d => d.ActorId)
+            //         .OnDelete(DeleteBehavior.ClientSetNull)
+            //         .HasConstraintName("fk_film_actor_actor");
 
-                entity.HasOne(d => d.Film)
-                    .WithMany(p => p.FilmActor)
-                    .HasForeignKey(d => d.FilmId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_film_actor_film");
-            });
+            //     entity.HasOne(d => d.Film)
+            //         .WithMany(p => p.FilmActor)
+            //         .HasForeignKey(d => d.FilmId)
+            //         .OnDelete(DeleteBehavior.ClientSetNull)
+            //         .HasConstraintName("fk_film_actor_film");
+            // });
 
-            modelBuilder.Entity<FilmCategory>(entity =>
-            {
-                entity.HasKey(e => new { e.FilmId, e.CategoryId })
-                    .ForSqlServerIsClustered(false);
+            // modelBuilder.Entity<FilmCategory>(entity =>
+            // {
+            //     entity.HasKey(e => new { e.FilmId, e.CategoryId })
+            //         .ForSqlServerIsClustered(false);
 
-                entity.ToTable("film_category");
+            //     entity.ToTable("film_category");
 
-                entity.HasIndex(e => e.CategoryId)
-                    .HasName("idx_fk_film_category_category");
+            //     entity.HasIndex(e => e.CategoryId)
+            //         .HasName("idx_fk_film_category_category");
 
-                entity.HasIndex(e => e.FilmId)
-                    .HasName("idx_fk_film_category_film");
+            //     entity.HasIndex(e => e.FilmId)
+            //         .HasName("idx_fk_film_category_film");
 
-                entity.Property(e => e.FilmId).HasColumnName("film_id");
+            //     entity.Property(e => e.FilmId).HasColumnName("film_id");
 
-                entity.Property(e => e.CategoryId).HasColumnName("category_id");
+            //     entity.Property(e => e.CategoryId).HasColumnName("category_id");
 
-                entity.Property(e => e.LastUpdate)
-                    .HasColumnName("last_update")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
+            //     entity.Property(e => e.LastUpdate)
+            //         .HasColumnName("last_update")
+            //         .HasColumnType("datetime")
+            //         .HasDefaultValueSql("(getdate())");
 
-                entity.HasOne(d => d.Category)
-                    .WithMany(p => p.FilmCategory)
-                    .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_film_category_category");
+            //     entity.HasOne(d => d.Category)
+            //         .WithMany(p => p.FilmCategory)
+            //         .HasForeignKey(d => d.CategoryId)
+            //         .OnDelete(DeleteBehavior.ClientSetNull)
+            //         .HasConstraintName("fk_film_category_category");
 
-                entity.HasOne(d => d.Film)
-                    .WithMany(p => p.FilmCategory)
-                    .HasForeignKey(d => d.FilmId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_film_category_film");
-            });
+            //     entity.HasOne(d => d.Film)
+            //         .WithMany(p => p.FilmCategory)
+            //         .HasForeignKey(d => d.FilmId)
+            //         .OnDelete(DeleteBehavior.ClientSetNull)
+            //         .HasConstraintName("fk_film_category_film");
+            // });
 
             modelBuilder.Entity<Language>(entity =>
             {

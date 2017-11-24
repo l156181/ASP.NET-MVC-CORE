@@ -15,5 +15,9 @@ namespace entity_frawework_core_1.Model
         public DateTime LastUpdate { get; set; }
 
         public ICollection<FilmCategory> FilmCategory { get; set; }
+
+        public override string ToString() {
+            return this.CategoryId + "".PadRight(20) + this.Name;
+        }
     }
 }

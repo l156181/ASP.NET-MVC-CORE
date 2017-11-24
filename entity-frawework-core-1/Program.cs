@@ -17,8 +17,16 @@ namespace entity_frawework_core_1
                     
                 }
 
+                Console.WriteLine();
+
                 foreach(var film in context.Film){
                     Console.WriteLine(film);
+                }
+
+                Console.WriteLine();
+
+                foreach(var category in context.Category){
+                    Console.WriteLine(category);
                 }
             }
         }
