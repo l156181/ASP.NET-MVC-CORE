@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using entity_frawework_core_1.Dados;
+using System.Collections.Generic;
 
 namespace entity_frawework_core_1.Model
 {
@@ -27,11 +28,12 @@ namespace entity_frawework_core_1.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+                       
             modelBuilder.ApplyConfiguration(new ActorConfiguration());
             modelBuilder.ApplyConfiguration(new FilmConfiguration());
             modelBuilder.ApplyConfiguration(new FilmActorConfiguration());
             modelBuilder.ApplyConfiguration(new FilmCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
 
             // modelBuilder.Entity<Actor>(entity =>
             // {
@@ -251,24 +253,24 @@ namespace entity_frawework_core_1.Model
             //         .HasConstraintName("fk_film_category_film");
             // });
 
-            modelBuilder.Entity<Language>(entity =>
-            {
-                entity.ToTable("language");
+            // modelBuilder.Entity<Language>(entity =>
+            // {
+            //     entity.ToTable("language");
 
-                entity.Property(e => e.LanguageId)
-                    .HasColumnName("language_id")
-                    .ValueGeneratedOnAdd();
+            //     entity.Property(e => e.LanguageId)
+            //         .HasColumnName("language_id")
+            //         .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.LastUpdate)
-                    .HasColumnName("last_update")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
+            //     entity.Property(e => e.LastUpdate)
+            //         .HasColumnName("last_update")
+            //         .HasColumnType("datetime")
+            //         .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasColumnType("char(20)");
-            });
+            //     entity.Property(e => e.Name)
+            //         .IsRequired()
+            //         .HasColumnName("name")
+            //         .HasColumnType("char(20)");
+            // });
 
             modelBuilder.Entity<Staff>(entity =>
             {

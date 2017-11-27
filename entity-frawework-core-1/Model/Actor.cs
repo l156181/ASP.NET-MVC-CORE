@@ -16,7 +16,7 @@ namespace entity_frawework_core_1.Model
 //      [Column("actor_id")]      
         public int ActorId { get; set; }
 
-        [Required]
+//        [Required]
 //      [Column("first_name", "varchar(45)")]
 //      [Column("first_name", TypeName="varchar(45)")]
         public string FirstName { get; set; }
@@ -26,7 +26,7 @@ namespace entity_frawework_core_1.Model
         public ICollection<FilmActor> FilmActor { get; set; }
 
         public override string ToString(){
-            return "ACTOR "+ this.ActorId +  "".PadRight(19) + this.FirstName.PadRight(20) + " " + this.LastName;
+            return "ACTOR "+ this.ActorId +  "".PadRight(19) + this.FirstName.PadRight(20) + this.LastName;
         }
     }
 }

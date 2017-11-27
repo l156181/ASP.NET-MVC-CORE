@@ -12,21 +12,35 @@ namespace entity_frawework_core_1
         {
             using(var context = new AluraFilmesContext()){   
                 
-                foreach(var actor in context.Actor){
-                    Console.WriteLine(actor);
+                // foreach(var actor in context.Actor){
+                //     Console.WriteLine(actor);
                     
-                }
+                // }
 
-                Console.WriteLine();
+                // Console.WriteLine();
 
-                foreach(var film in context.Film){
-                    Console.WriteLine(film);
-                }
+                // foreach(var film in context.Film){
+                //     Console.WriteLine(film);
+                // }
 
-                Console.WriteLine();
+                // Console.WriteLine();
 
-                foreach(var category in context.Category){
-                    Console.WriteLine(category);
+                // foreach(var category in context.Category){
+                //     Console.WriteLine(category);
+                // }
+
+                // Console.WriteLine();
+                
+                var languages = context.Language.Include(l => l.FilmLanguage);
+
+                foreach(var language in languages){                    
+                    Console.WriteLine();
+                    Console.WriteLine(language);
+
+                    foreach(var film in language.FilmLanguage){
+                        Console.WriteLine();
+                        Console.WriteLine("".PadRight(20) + film);
+                    }
                 }
             }
         }

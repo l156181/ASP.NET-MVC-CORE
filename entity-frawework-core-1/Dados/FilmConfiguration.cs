@@ -36,7 +36,7 @@ namespace entity_frawework_core_1.Dados
 
                 builder.Property(e => e.OriginalLanguageId).HasColumnName("original_language_id");
 
-                builder.Property(e => e.Rating)
+                builder.Property(e => e.parentalRating)
                     .HasColumnName("rating")
                     .HasMaxLength(10)
                     .IsUnicode(false)
@@ -66,3 +66,8 @@ namespace entity_frawework_core_1.Dados
         }
     }
 }
+
+// Example of the declariton shadow property
+// builder.Property<DateTime>("last_update")
+//        .HasColumnType("datetime")
+//        .DefaultValue("getdate()");

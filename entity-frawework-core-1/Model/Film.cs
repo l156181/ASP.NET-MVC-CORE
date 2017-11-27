@@ -18,7 +18,9 @@ namespace entity_frawework_core_1.Model
         public byte LanguageId { get; set; }
         public byte? OriginalLanguageId { get; set; }
         public short? Length { get; set; }
-        public string Rating { get; set; }
+       
+        //public string Rating { get; set; }
+        public ParentalRating parentalRating {get; set;}
         public DateTime LastUpdate { get; set; }
 
         public Language Language { get; set; }

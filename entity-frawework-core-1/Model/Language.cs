@@ -17,5 +17,9 @@ namespace entity_frawework_core_1.Model
 
         public ICollection<Film> FilmLanguage { get; set; }
         public ICollection<Film> FilmOriginalLanguage { get; set; }
+
+        public override string ToString(){
+            return this.LanguageId + "".PadRight(20) + this.Name;
+        }
     }
 }
