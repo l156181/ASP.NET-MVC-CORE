@@ -1,0 +1,10 @@
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\bin\Debug\netcoreapp2.0\alura-tunes-entities.deps.json
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\bin\Debug\netcoreapp2.0\alura-tunes-entities.runtimeconfig.json
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\bin\Debug\netcoreapp2.0\alura-tunes-entities.runtimeconfig.dev.json
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\bin\Debug\netcoreapp2.0\alura-tunes-entities.dll
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\bin\Debug\netcoreapp2.0\alura-tunes-entities.pdb
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\obj\Debug\netcoreapp2.0\alura-tunes-entities.csproj.CoreCompileInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\obj\Debug\netcoreapp2.0\alura-tunes-entities.AssemblyInfoInputs.cache
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\obj\Debug\netcoreapp2.0\alura-tunes-entities.AssemblyInfo.cs
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\obj\Debug\netcoreapp2.0\alura-tunes-entities.dll
+C:\Users\vntleju\Documents\Cursos\alura\alura-tunes-entities\obj\Debug\netcoreapp2.0\alura-tunes-entities.pdb

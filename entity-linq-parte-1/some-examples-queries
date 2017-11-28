@@ -1,0 +1,18 @@
+var query1 = from alb in contexto.Albums
+select alb;
+
+query2 = alb.OrderBy(a => a.Artista.Nome).ThenBy(a => a.Titulo)
+
+//----------------------------------------------------
+
+var query = contexto.NotasFiscais.orderByDescending(nf => nf.Total).ThenBy(nf => nf.Cliente.PrimeiroNome + " " + nf.Cliente.Sobrenome);
+
+//---------------------------------------------------
+
+var query = from alb in context.Albums
+			select new 
+			group alb by alb.Artista into artGroup
+			{
+				Artista = artGroup.Key.Nome
+
+			};
